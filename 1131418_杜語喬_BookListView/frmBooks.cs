@@ -30,8 +30,8 @@ namespace _1131418_杜語喬_BookListView
             cmbView.Items.Add("大圖示加詳細資料");
             cmbView.SelectedIndex = 0; //預設選取第一個項目
             lvwBooks.Columns.Add("書名", 130); //新增 書名 欄位，寬度為100
-            lvwBooks.Columns.Add("作者", 80); //新增 作者 欄位，寬度為60
-            lvwBooks.Columns.Add("類別", 100); //新增 類別 欄位
+            lvwBooks.Columns.Add("作者", 200); //新增 作者 欄位，寬度為60
+            lvwBooks.Columns.Add("類別", 200); //新增 類別 欄位
             lvwBooks.BeginUpdate(); //暫停重繪
             for (int i = 0; i < b_name.Length; i++)
             { //宣告一個ListViewItem物件
@@ -72,6 +72,7 @@ namespace _1131418_杜語喬_BookListView
             //取得書名
             string strBookname = b_name[lvwBooks.SelectedIndices[0]];
             bool exist = lstBorrow.Items.Contains(strBookname);
+            
             if (!exist) // 若選取的書名不存在借書清單中
             {
                 DialogResult dr = MessageBox.Show("確定要借閱嗎?",
@@ -79,6 +80,15 @@ namespace _1131418_杜語喬_BookListView
                 if (dr == DialogResult.Yes) // 若按 <是> 鈕
                 { // 新增項目到借書清單
                     lstBorrow.Items.Add(strBookname);
+                }
+            }
+            else // 若書籍已存在借書清單中
+            {
+                DialogResult dr = MessageBox.Show("確定要還書嗎?",
+                strBookname, MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes) // 若按 <是> 鈕
+                { // 移除項目從借書清單
+                    lstBorrow.Items.Remove(strBookname);
                 }
             }
         }

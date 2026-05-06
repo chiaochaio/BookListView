@@ -154,6 +154,7 @@
             this.lvwBooks.SmallImageList = this.imgS;
             this.lvwBooks.TabIndex = 4;
             this.lvwBooks.UseCompatibleStateImageBehavior = false;
+            this.lvwBooks.ItemActivate += new System.EventHandler(this.lvwBooks_ItemActivate);
             this.lvwBooks.SelectedIndexChanged += new System.EventHandler(this.lvwBooks_SelectedIndexChanged);
             // 
             // frmBooks
