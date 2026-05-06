@@ -76,7 +76,7 @@
             this.pnlTools.Controls.Add(this.grpBorrow);
             this.pnlTools.Controls.Add(this.grpView);
             this.pnlTools.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlTools.Location = new System.Drawing.Point(520, 5);
+            this.pnlTools.Location = new System.Drawing.Point(553, 5);
             this.pnlTools.Name = "pnlTools";
             this.pnlTools.Padding = new System.Windows.Forms.Padding(5);
             this.pnlTools.Size = new System.Drawing.Size(247, 447);
@@ -139,7 +139,7 @@
             this.pnlView.Location = new System.Drawing.Point(5, 5);
             this.pnlView.Name = "pnlView";
             this.pnlView.Padding = new System.Windows.Forms.Padding(6);
-            this.pnlView.Size = new System.Drawing.Size(515, 447);
+            this.pnlView.Size = new System.Drawing.Size(548, 447);
             this.pnlView.TabIndex = 4;
             // 
             // lvwBooks
@@ -150,7 +150,7 @@
             this.lvwBooks.LargeImageList = this.imgL;
             this.lvwBooks.Location = new System.Drawing.Point(6, 6);
             this.lvwBooks.Name = "lvwBooks";
-            this.lvwBooks.Size = new System.Drawing.Size(503, 435);
+            this.lvwBooks.Size = new System.Drawing.Size(536, 435);
             this.lvwBooks.SmallImageList = this.imgS;
             this.lvwBooks.TabIndex = 4;
             this.lvwBooks.UseCompatibleStateImageBehavior = false;
@@ -162,15 +162,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(772, 457);
+            this.ClientSize = new System.Drawing.Size(805, 457);
             this.Controls.Add(this.pnlView);
             this.Controls.Add(this.pnlTools);
             this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "frmBooks";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "圖書管理";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBooks_FormClosing);
             this.Load += new System.EventHandler(this.frmBooks_Load);
             this.grpView.ResumeLayout(false);
             this.pnlTools.ResumeLayout(false);

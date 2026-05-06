@@ -97,5 +97,16 @@ namespace _1131418_杜語喬_BookListView
         {
 
         }
+
+        private void frmBooks_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 詢問使用者是否確認要離開
+            DialogResult dr = MessageBox.Show("確定要離開應用程式嗎?",
+                "確認離開", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No) // 若按 <否> 鈕
+            {
+                e.Cancel = true; // 取消關閉視窗
+            }
+        }
     }
 }
